@@ -28,31 +28,32 @@ This editable file is the 'control panel' of the application. Users set the valu
 
                 place_id : int
                     Numerical code representing the geographic region for the scrape job
-                    Find the correct code via setup of a real search on the iNaturalist 'Explore' page
-                    The code is contained in the url of the search
+                    Examples: 6986 for South Africa, 7146 for Zimbabwe
+                    Find the correct code by executing a normal search on the iNaturalist 'Explore' page
+                    The code is contained in the url of the search (click on the url in the address bar)
                     This scraper only supports a single place_id value per search
 
                 taxon_id : int
                     Numerical code representing the taxon for the scrape job
-                    Find the correct code via setup of a real search on the iNaturalist 'Explore' page
-                    The code is contained in the url of the search
+                    Examples: 26036 for Class Reptilia (reptiles), 85553 for Suborder Serpentes (snakes)
+                    Find the correct code by executing a normal search on the iNaturalist 'Explore' page
+                    The code is contained in the url of the search (click on the url in the address bar)
                     This scraper only supports a single taxon_id value per search
 
                 start_page : int
                     Specifies which page of the returned search results the scrape job will begin at
-                    Use of a value of 1 is recommended (begin scraping at the first page of results)
+                    A value of 1 is recommended (begin scraping at the first page of results)
                     The application will not allow start_page values such that start_page*per_page > 10000
 
                 per_page : int
                     Specifies the number of observation records to be returned per page of search results
-                    Use of a value of 100 is recommended
+                    A value of 100 is recommended
 
                 db_name : str
                     Specifies the name of the database into which records will be accessioned
 
                 table_name : str 
                     Specifies the name of the destination data table (within the db_name database) for storage of scraped records
-
 
 
 

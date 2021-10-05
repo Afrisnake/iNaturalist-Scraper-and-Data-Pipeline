@@ -76,12 +76,15 @@ Contains long 'print' and 'logging' messages for the main script. These messages
 - Ensure that Python and the prerequisite libraies are installed on your machine (see 'Dependencies')
 - All five module files and the **__ init __.py** file must be placed in the same folder
 - Edit the 'inat_creds.py'and 'inat_search_params.py' files appropriately
-- To run the scraper, execute the main script
+- To run the scraper, execute the main script (from within VSCode or other code editor, or from Command Prompt, Python Command Prompt, Anaconda Prompt etc.) 
+
+### Outputs
+- Folder called 'iNaturalist_data' created in the working directory
+- Sqlite3 database (user-specified name) created in this folder
+- Scraped data inserted into the destination table (user-specified name) of the database (explore database with DB Browser for SQLite (DB4S) or other appropriate application)
+- Log file generated (iNat_scraper.log); logging info for subsequent scrape jobs appended to this file
 
 
-
-
-Logging
 Inherent limit of 10000, and how it's overcome
  
 

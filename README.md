@@ -26,7 +26,7 @@ This file must be edited by the user to include a valid iNaturalist *username* a
 - **inat_search_params.py**<br/>
 This editable file is the 'control panel' of the application. Users set the values of key variables, which are imported into the main script to control the scrape job. The following variables can be manipulated:
 
-
+vvvvv
 
     place_id : int
         Numerical code representing the geographic region for the scrape job

@@ -1,5 +1,5 @@
 # iNaturalist-Scraper-and-Data-Pipeline
-A Python application that scrapes biodiversity observation records from the iNaturalist website and pipes scraped data to a destination table in an sqlite3 database
+A Python application for Windows that scrapes biodiversity observation records from the iNaturalist website and pipes scraped data to a destination table in an sqlite3 database
 
 ## Introduction
 This modular web-scraping application scrapes behind an iNaturalist login, extracting key variables from each observation record (see below) and transferring these data via a data pipeline to a destination table in a sqlite3 database. The following variables are extracted (blank if data missing):
@@ -18,12 +18,13 @@ This modular web-scraping application scrapes behind an iNaturalist login, extra
 
 ## Implementation
 
-This web-scraper utilizes the hidden API's by which iNaturalist mediates queries to its records database. There are 5 modules, as follows:
+This web-scraper utilizes the hidden API's by which iNaturalist mediates queries to its records database. It comprises 5 modules (see below) as well as a mandatory 'init.py' file. All important information about the classes, methods, functions and variables defined in these modules is included in docstrings.
 
-- **inat_creds.py**
-This file is edited to include a valid iNaturalist *username* and *password*
-- **inat_search_params.py**
+- **inat_creds.py**<br/>
+This file must be edited by the user to include a valid iNaturalist *username* and *password*
+- **inat_search_params.py**<br/>
 This editable file is the 'control panel' of the application. Users set the values of key variables, which are imported into the main script to control the scrape job. The following variables can be manipulated:
+
     place_id : int
         Numerical code representing the geographic region for the scrape job
         Find the correct code via setup of a real search on the iNaturalist 'Explore' page
@@ -50,18 +51,23 @@ This editable file is the 'control panel' of the application. Users set the valu
 
     table_name : str 
         Specifies the name of the destination data table (within the db_name database) for storage of scraped records
-    
-Utilises the hidden API's that iNaturalist uses to mediate queries.
-Edit the 'inat_creds.py' module to input the user's iNaturalist username and password
-All important information about classes, methods and functions is provided in docstrings
+
+
+
+
+### Scraping Procedure
+- Ensure that Python and the prerequisite libraies are installed on your machine (see 'Dependencies')
+- All five module files and the 'init.py' file must be placed in the same folder
+- Edit the 'inat_creds.py'and 'inat_search_params.py' files appropriately
+- To run the scraper, execute the main script
+
+
+
+
 Logging
 Inherent limit of 10000, and how it's overcome
  
-- The computer acts as the dealer
-- Any number of players can compete
-- Any number of decks can be used for a given game
-- Any number of rounds can be played in a game, until all players have a zero bank balance
-- For each round, players can assign a value (1 or 11) to each ace card in their hand
+
 
 ## Dependencies
 Python 3.8

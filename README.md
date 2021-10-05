@@ -22,7 +22,7 @@ This web-scraper utilizes the hidden API's by which iNaturalist mediates queries
 
 
 - **inat_creds.py**<br/>
-This file must be edited by the user to include a valid iNaturalist *username* and *password*<br/>
+This file must be edited by the user to include a valid iNaturalist *username* and *password*
 - **inat_search_params.py**<br/>
 This editable file is the 'control panel' of the application. Users set the values of key variables, which are imported into the main script to control the scrape job. The following variables can be manipulated:
 

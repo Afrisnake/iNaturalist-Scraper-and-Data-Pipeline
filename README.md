@@ -76,8 +76,8 @@ Inherent limit of 10000, and how it's overcome
 
 
 ## Dependencies
-Python 3.8
-Requests library (pip install requests)
+Python 3.8<br/>
+Requests library (pip install requests)<br/>
 Beautiful Soup 4 libray (pip install bs4)
 
 ## Contact

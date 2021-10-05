@@ -18,7 +18,7 @@ This modular web-scraping application scrapes behind an iNaturalist login, extra
 
 ## Implementation
 
-This web-scraper utilizes the hidden API's by which iNaturalist mediates queries to its records database. It comprises 5 modules (see below) as well as a mandatory 'init.py' file. All important information about the classes, methods, functions and variables defined in these modules is included in docstrings.
+This web-scraper utilizes the hidden API's by which iNaturalist mediates queries to its records database. It comprises 5 modules (see below) as well as a mandatory '**__init__.py**' file. All important information about the classes, methods, functions and variables defined in these modules is included in docstrings.
 
 
 - **inat_creds.py**<br/>
@@ -63,7 +63,7 @@ This editable file is the 'control panel' of the application. Users set the valu
 
 ### Scraping Procedure
 - Ensure that Python and the prerequisite libraies are installed on your machine (see 'Dependencies')
-- All five module files and the 'init.py' file must be placed in the same folder
+- All five module files and the '**__init__.py**' file must be placed in the same folder
 - Edit the 'inat_creds.py'and 'inat_search_params.py' files appropriately
 - To run the scraper, execute the main script
 

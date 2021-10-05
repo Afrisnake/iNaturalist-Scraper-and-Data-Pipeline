@@ -57,7 +57,7 @@ This editable file is the 'control panel' of the application. Users set the valu
 
 - **inat_create_db.py**<br/>
 This module builds the database into which data will be accessioned, and the pipeline which mediates data transfer.<br/><br/>
-<pre>       - Creates an 'iNaturalist_data' folder in the working directory, in which the database will be located<br/><pre>
+<pre>       - Creates an 'iNaturalist_data' folder in the working directory, in which the database will be located<br/></pre>
             - Creates and connects to the database<br/>
             - Creates a named data storage table in the database, as a destination for scraped data<br/>
             - Inserts scraped data into the storage table<br/>

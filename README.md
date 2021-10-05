@@ -25,14 +25,14 @@ This web-scraper utilizes the hidden API's by which iNaturalist mediates queries
 This file must be edited by the user to include a valid iNaturalist *username* and *password*
 - **inat_search_params.py**<br/>
 This editable file is the 'control panel' of the application. Users set the values of key variables, which are imported into the main script to control the scrape job. The following variables can be manipulated:
-
-                place_id : int
-                    Numerical code representing the geographic region for the scrape job
-                    Examples: 6986 for South Africa, 7146 for Zimbabwe
-                    Find the correct code by executing a normal search on the iNaturalist 'Explore' page
-                    The code is contained in the url of the search (click on the url in the address bar)
-                    This scraper only supports a single place_id value per search
-
+<pre>
+      place_id : int
+          Numerical code representing the geographic region for the scrape job
+          Examples: 6986 for South Africa, 7146 for Zimbabwe
+          Find the correct code by executing a normal search on the iNaturalist 'Explore' page
+          The code is contained in the url of the search (click on the url in the address bar)
+          This scraper only supports a single place_id value per search
+</pre>
                 taxon_id : int
                     Numerical code representing the taxon for the scrape job
                     Examples: 26036 for Class Reptilia (reptiles), 85553 for Suborder Serpentes (snakes)

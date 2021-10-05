@@ -20,11 +20,6 @@ This modular web-scraping application scrapes behind an iNaturalist login, extra
 
 This web-scraper utilizes the hidden API's by which iNaturalist mediates queries to its records database. It comprises 5 modules (see below) as well as a mandatory 'init.py' file. All important information about the classes, methods, functions and variables defined in these modules is included in docstrings.
 
-- **inat_creds.py**<br/>
-This file must be edited by the user to include a valid iNaturalist *username* and *password*
-- **inat_search_params.py**<br/>
-This editable file is the 'control panel' of the application. Users set the values of key variables, which are imported into the main script to control the scrape job. The following variables can be manipulated:
-
     place_id : int
         Numerical code representing the geographic region for the scrape job
         Find the correct code via setup of a real search on the iNaturalist 'Explore' page
@@ -51,6 +46,15 @@ This editable file is the 'control panel' of the application. Users set the valu
 
     table_name : str 
         Specifies the name of the destination data table (within the db_name database) for storage of scraped records
+
+
+
+- **inat_creds.py**<br/>
+This file must be edited by the user to include a valid iNaturalist *username* and *password*
+- **inat_search_params.py**<br/>
+This editable file is the 'control panel' of the application. Users set the values of key variables, which are imported into the main script to control the scrape job. The following variables can be manipulated:
+
+
 
 
 

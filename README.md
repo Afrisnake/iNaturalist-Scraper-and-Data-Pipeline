@@ -4,17 +4,17 @@ A Python application for Windows that scrapes biodiversity observation records f
 ## Introduction
 This modular web-scraping application scrapes behind an iNaturalist login, extracting key variables from each observation record (see below) and transferring these data via a data pipeline to a destination table in a sqlite3 database. The following variables are extracted (blank if data missing):
 
-            id (int):           unique iNaturalist primary key
-            date (str):         date on which observation was made (yyyy-mm-dd)
-            genus (str):        genus name for organism
-            species (str):      species name for organism
-            subspecies (str):   subspecies name for organism
-            coords (list):      locality coordinates in decimal degrees [lat, long]
-            lat (float):        locality latitude in decimal degrees
-            long (float):       locality longitude in decimal degrees
-            locality (str):     iNaturalist 'best guess' of locality based on coords
-            introduced (bool):  indigenous to locality (False, 0) or introduced to locality (True, 1)
-            qual_grade (str):   identification verified ('research') or yet to be verified ('needs_id')  
+                        id (int):           unique iNaturalist primary key
+                        date (str):         date on which observation was made (yyyy-mm-dd)
+                        genus (str):        genus name for organism
+                        species (str):      species name for organism
+                        subspecies (str):   subspecies name for organism
+                        coords (list):      locality coordinates in decimal degrees [lat, long]
+                        lat (float):        locality latitude in decimal degrees
+                        long (float):       locality longitude in decimal degrees
+                        locality (str):     iNaturalist 'best guess' of locality based on coords
+                        introduced (bool):  indigenous to locality (False, 0) or introduced to locality (True, 1)
+                        qual_grade (str):   identification verified ('research') or yet to be verified ('needs_id')  
 
 ## Implementation
 
@@ -57,11 +57,13 @@ This editable file is the 'control panel' of the application. Users set the valu
 
 - **inat_create_db.py**<br/>
 This module builds the database into which data will be accessioned, and the pipeline which mediates data transfer.<br/><br/>
-<pre>       - Creates an 'iNaturalist_data' folder in the working directory, in which the database will be located<br/></pre>
-            - Creates and connects to the database<br/>
-            - Creates a named data storage table in the database, as a destination for scraped data<br/>
-            - Inserts scraped data into the storage table<br/>
-            - Detects and ignores duplicate data when piping to the table
+<pre>
+- Creates an 'iNaturalist_data' folder in the working directory, in which the database will be located
+- Creates and connects to the database
+- Creates a named data storage table in the database, as a destination for scraped data
+- Inserts scraped data into the storage table
+- Detects and ignores duplicate data when piping to the table
+</pre>
 - **inat_scrape_longstrings.py**<br/>
 Contains long 'print' and 'logging' messages for the main script. These messages reduce readability of the code, so are imported to the main script from this module.
 

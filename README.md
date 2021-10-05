@@ -24,7 +24,7 @@ This web-scraper utilizes the hidden API's by which iNaturalist mediates queries
 - **inat_creds.py**<br/>
 This file must be edited by the user to include a valid iNaturalist *username* and *password*
 - **inat_search_params.py**<br/>
-This editable file is the 'control panel' of the application. Users set the values of key variables, which are imported into the main script to control the scrape job. The following variables can be manipulated:
+This editable file is the 'control panel' of the application. User sets the values of key variables, which are imported into the main script to control the scrape job. The following variables can be manipulated:
 <pre>
       place_id : int
           Numerical code representing the geographic region for the scrape job
@@ -66,8 +66,35 @@ This module builds the database into which data will be accessioned, and the pip
 </pre>
 - **inat_scrape_longstrings.py**<br/>
 Contains long 'print' and 'logging' messages for the main script. These messages reduce readability of the code, so are imported to the main script from this module.
+- **inaturalist_scraper.py**<br/>
+This is the main script, which implements a full scrape job based on parameters in the 'inat_search_params.py' module.
 
+Runs a full scrape job based on parameters in the 'inat_search_params' module.
 
+        Instantiates the iNaturalist class
+        Executes a query filtered by date ('query_filterbydate' method)
+        Loops through pages of filtered observations matching the query until the 'extract_records' method returns zero records
+        Pipes extracted observation data to the destination table in the sqlite3 database
+
+        iNaturalist has a limit of start_page*per_page = 10000. The code loops through pages of observations up to this limit,
+        after which the date of the last observation extracted prior to the limit being reached is set as the new upper bound
+        (oldest date) for the next round of querying filtered by date. This allows scraping to continue into the next set of records.
+
+        If the scrape job terminates unexpectedly, it can be restarted at the last page that was processed prior to termination.
+        The user edits the 'inat_search_params' file, setting the 'start_page' value to the page number at which the scrape ended.
+        If this results in start_page*per_page > 10000, the date of the last observation prior to termination is retrieved from the
+        'current_oldest_date.txt' file and set as the upper bound (oldest date) for a new round of querying filtered by date. Scraping
+        then begins where it left off, at page 1 of this new filtered search.
+
+        In a fresh scrape, the user may enter a value for the 'start_page' variable such that start_page*per_page > 10000. This application
+        does not have functionality to support such a search, and the user is instructed to enter a lower value for 'start_page'. 
+
+        Raises
+        ----------
+        UnboundLocalError -> FileNotFoundError
+            When start_page*per_page > 10000 in a fresh implementation of scraper
+            Causes termination of the application
+            User is instructed to use a lower 'start_page' value
 
 
 

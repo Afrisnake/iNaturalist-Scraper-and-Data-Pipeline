@@ -2,7 +2,7 @@
 A Python application for Windows that scrapes biodiversity observation records from the iNaturalist website and pipes scraped data to a destination table in an sqlite3 database
 
 ## Introduction
-This modular web-scraping application scrapes behind an iNaturalist login, extracting key variables from each observation record (see below) and transferring these data via a data pipeline to a destination table in a sqlite3 database. The following variables are extracted (blank if data missing):
+This modular web-scraping application scrapes behind an iNaturalist login, extracting key variables from each observation record (see below) and transferring these data via a data pipeline to a destination table in an sqlite3 database. The following variables are extracted (blank if data missing):
 <pre>
       id (int):           unique iNaturalist primary key
       date (str):         date on which observation was made (yyyy-mm-dd)
@@ -18,10 +18,11 @@ This modular web-scraping application scrapes behind an iNaturalist login, extra
 </pre>
 
 ## Implementation
-This web-scraper utilizes the hidden API's by which iNaturalist mediates queries to its records database. It comprises 5 modules (see below) as well as a mandatory **__ init __.py** file. All important information about the classes, methods, functions and variables defined in these modules is included in docstrings.
+This web-scraper utilizes the hidden APIs by which iNaturalist mediates queries to its records database. It comprises 5 modules (see below) as well as a mandatory **__ init __.py** file. All important information about the classes, methods, functions and variables defined in these modules is included in docstrings.
 
 - **inat_creds.py**<br/>
 This file must be edited by the user to include a valid iNaturalist *username* and *password*
+
 - **inat_search_params.py**<br/>
 This editable file is the 'control panel' of the application. User sets the values of key variables, which are imported into the main script to control the scrape job. The following variables can be manipulated:
 <pre>
@@ -54,6 +55,7 @@ This editable file is the 'control panel' of the application. User sets the valu
       table_name : str
           Specifies the name of the destination data table (within the db_name database) for storage of scraped records
 </pre>
+
 - **inat_create_db.py**<br/>
 This module builds the database into which data will be accessioned, and the pipeline which mediates data transfer. Main actions are as follows:<br/>
 <pre>
@@ -63,8 +65,10 @@ This module builds the database into which data will be accessioned, and the pip
       Inserts scraped data into the storage table
       Detects and ignores duplicate data when piping to the table
 </pre>
+
 - **inat_scrape_longstrings.py**<br/>
 Contains long 'print' and 'logging' messages for the main script. These messages reduce readability of the code, so are imported to the main script from this module.
+
 - **inaturalist_scraper.py**<br/>
 This is the main script, which implements a full scrape job based on parameters in the 'inat_search_params.py' module. See docstrings for a detailed description of the classes, methods and functions defined in this module. Note the following:
 <pre>
@@ -88,14 +92,14 @@ This is the main script, which implements a full scrape job based on parameters 
 - All five module files and the **__ init __.py** file must be placed in the same folder (working directory)
 - Edit the 'inat_creds.py'and 'inat_search_params.py' files appropriately
 - Ensure that the 'current_oldest_date.txt' file is **deleted** if present, **unless** the search is being restarted part way through after unexpected termination
-- To run the scraper, execute the main script (from within VSCode or other code editor, or from Command Prompt, Python Command Prompt, Anaconda Prompt etc.) 
+- To run the scraper, execute the main script 'inaturalist_scraper.py' (from within VSCode or other code editor, or from Command Prompt, Python Command Prompt, Anaconda Prompt etc.) 
 
 ### Outputs
 - Folder called 'iNaturalist_data' created in the working directory
 - Sqlite3 database (user-specified name) created in this folder
 - Scraped data inserted into the destination table (user-specified name) of the database (explore database with DB Browser for SQLite (DB4S) or other appropriate application)
 - Comprehensive log file generated (iNat_scraper.log). Logging info for subsequent scrape jobs is appended to this file
-- A 'current_oldest_date.txt' file is generated to track progress of the scrape job through records ordered in ascending order by observation date. This file is automatically deleted upon normal termination of the scrape job.
+- A 'current_oldest_date.txt' file is generated to track progress of the scrape job through records ordered in ascending order by observation date. This file is automatically deleted upon normal termination of a scrape job.
 
 ## Dependencies
 Python 3.8<br/>

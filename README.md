@@ -99,7 +99,7 @@ This is the main script, which implements a full scrape job based on parameters 
 - Folder called 'iNaturalist_data' created in the working directory.
 - Sqlite3 database (user-specified name) created in this folder.
 - Scraped data inserted into the destination table (user-specified name) of the database (explore database with DB Browser for SQLite (DB4S) or other appropriate application).
-- Comprehensive log file generated (iNat_scraper.log). Logging info for subsequent scrape jobs is appended to this file
+- Comprehensive log file generated: 'iNat_scraper.log'. Logging info for subsequent scrape jobs is appended to this file
 - A 'current_oldest_date.txt' file is generated to track progress of the scrape job through records ordered in ascending order by observation date. This file is automatically deleted upon normal termination of a scrape job.
 
 ## Dependencies

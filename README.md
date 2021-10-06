@@ -1,5 +1,5 @@
 # iNaturalist-Scraper-and-Data-Pipeline
-A Python application for Windows that scrapes biodiversity observation records from the iNaturalist website and pipes scraped data to a destination table in an sqlite3 database
+A Python application for Windows that scrapes biodiversity observation records from the [iNaturalist](https://www.inaturalist.org) website and pipes scraped data to a destination table in an sqlite3 database
 
 ## Introduction
 This modular web-scraping application scrapes behind an iNaturalist login, extracting key variables from each observation record (see below) and transferring these data via a data pipeline to a destination table in an sqlite3 database. The following variables are extracted (blank if data missing):
@@ -24,7 +24,7 @@ This web-scraper utilizes the hidden APIs by which iNaturalist mediates queries 
 This file must be edited by the user to include a valid iNaturalist *username* and *password*.
 
 - **inat_search_params.py**<br/>
-This editable file is the 'control panel' of the application. User sets the values of key variables, which are imported into the main script to control the scrape job. The following variables can be manipulated:
+This editable file is the 'control panel' of the application. User sets the values of key variables, which are imported into the main script to control the scrape job. The following variables can be manipulated. Click on this link to access the [iNaturalist 'Explore'](https://www.inaturalist.org/observations) page mentioned below. 
 <pre>
       place_id : int
           Numerical code representing the geographic region for the scrape job

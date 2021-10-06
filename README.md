@@ -92,7 +92,7 @@ This is the main script, which implements a full scrape job based on parameters 
 - Ensure that Python and the prerequisite libraries are installed on your machine (see 'Dependencies').
 - All five module files and the **__ init __.py** file must be placed in the same folder (working directory).
 - Edit the 'inat_creds.py' and 'inat_search_params.py' files appropriately.
-- Ensure that the 'current_oldest_date.txt' file is **deleted** if present, **unless** the search is being restarted part way through after unexpected termination.
+- Ensure that the 'current_oldest_date.txt' file is **deleted** if present, **unless** the search is being restarted part way through after unexpected termination of the application.
 - To run the scraper, execute the main script 'inaturalist_scraper.py' (from within VSCode or other code editor, or from Command Prompt, Python Command Prompt, Anaconda Prompt etc.).
 
 ### Outputs

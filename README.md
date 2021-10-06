@@ -1,5 +1,5 @@
 # iNaturalist-Scraper-and-Data-Pipeline
-A Python application for Windows that scrapes biodiversity observation records from the [iNaturalist](https://www.inaturalist.org) website and pipes scraped data to a destination table in an sqlite3 database
+A Python application for Windows that scrapes biodiversity observation records from the [iNaturalist](https://www.inaturalist.org) website and pipes scraped data to a destination table in an [sqlite3](https://www.sqlite.org/index.html) database
 
 ## Introduction
 This modular web-scraping application scrapes behind an iNaturalist login, extracting key variables from each observation record (see below) and transferring these data via a data pipeline to a destination table in an sqlite3 database. The following variables are extracted (blank if data missing):
@@ -24,7 +24,7 @@ This web-scraper utilizes the hidden APIs by which iNaturalist mediates queries 
 This file must be edited by the user to include a valid iNaturalist *username* and *password*.
 
 - **inat_search_params.py**<br/>
-This editable file is the 'control panel' of the application. User sets the values of key variables, which are imported into the main script to control the scrape job. The following variables can be manipulated. Click on this link to access the [iNaturalist 'Explore'](https://www.inaturalist.org/observations) page mentioned below. 
+This editable file is the 'control panel' of the application. User sets the values of key variables, which are imported into the main script to control the scrape job. The following variables can be manipulated. This link accesses the [iNaturalist 'Explore'](https://www.inaturalist.org/observations) page mentioned below. 
 <pre>
       place_id : int
           Numerical code representing the geographic region for the scrape job
@@ -98,7 +98,7 @@ This is the main script, which implements a full scrape job based on parameters 
 ### Outputs
 - Folder called 'iNaturalist_data' created in the working directory.
 - Sqlite3 database (user-specified name) created in this folder.
-- Scraped data inserted into the destination table (user-specified name) of the database (explore database with DB Browser for SQLite (DB4S) or other appropriate application).
+- Scraped data inserted into the destination table (user-specified name) of the database (explore database with [DB Browser for SQLite](https://sqlitebrowser.org) (DB4S) or other appropriate application).
 - Comprehensive log file generated: 'iNat_scraper.log'. Logging info for subsequent scrape jobs is appended to this file.
 - A 'current_oldest_date.txt' file is generated to track progress of the scrape job through records ordered in ascending order by observation date. This file is automatically deleted upon normal termination of a scrape job.<br/>
 

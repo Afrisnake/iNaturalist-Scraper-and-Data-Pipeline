@@ -102,7 +102,9 @@ This is the main script, which implements a full scrape job based on parameters 
 - Comprehensive log file generated: 'iNat_scraper.log'. Logging info for subsequent scrape jobs is appended to this file.
 - A 'current_oldest_date.txt' file is generated to track progress of the scrape job through records ordered in ascending order by observation date. This file is automatically deleted upon normal termination of a scrape job.<br/>
 
-An example output database of southern African reptile observations is included in this repository:  **iNaturalist_data\iNaturalist_records**
+An example output database of southern African reptile observations is included in this repository, along with the corresponding log file:<br/>
+- iNaturalist_data/iNaturalist_reptile_records.db
+- iNaturalist_data/iNat_scraper.log
 
 ## Dependencies
 Python 3.8<br/>

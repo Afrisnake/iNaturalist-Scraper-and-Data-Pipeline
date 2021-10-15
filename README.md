@@ -109,7 +109,7 @@ An example output database of southern African reptile observations is included 
 ## Dependencies
 Python 3.8<br/>
 Requests library (pip install requests)<br/>
-Beautiful Soup 4 libray (pip install bs4)
+Beautiful Soup 4 library (pip install bs4)
 
 ## Contact
 Please feel free to contact me (Chris Kelly) at the following email:<br/>
